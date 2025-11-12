@@ -7,23 +7,15 @@ It involves data extraction, transformation, and loading (ETL) from a raw transa
 The goal is to build a scalable data warehouse that supports advanced business intelligence queries such as sales performance, customer segmentation, and profitability analysis.
 
 ## Project Objectives
-
 * Design a star schema optimized for analytical queries.
-
 * Perform data cleaning, transformation, and validation before loading.
-
 * Implement dimension and fact tables with referential integrity.
-
 * Validate the ETL pipeline to ensure data consistency across all tables.
-
 * Enable rich SQL-based analytics and reporting from the warehouse.
 
 ##  Dataset
-
 ###### Source: Kaggle – Superstore Sales Dataset
-
 ###### Description: Contains information about sales transactions, customers, products, shipping modes, and order details.
-
 Column	Description
 Order ID	Unique identifier for each order
 Order Date	Date when order was placed
@@ -40,19 +32,19 @@ Sales	Total sales amount
 Quantity	Units sold
 Discount	Discount applied
 Profit	Profit earned
+
 ##  Data Warehouse Schema (Star Schema)
 ### Fact Table
 
 ###### fact_sales
-
 Column	Description
 sales_id	Surrogate key
 order_id	Order identifier
-customer_id	FK → dim_customer
-product_id	FK → dim_product
-ship_id	FK → dim_ship
-order_date_id	FK → dim_date
-ship_date_id	FK → dim_date
+customer_id	FK - dim_customer
+product_id	FK - dim_product
+ship_id	FK - dim_ship
+order_date_id	FK - dim_date
+ship_date_id	FK - dim_date
 quantity	Quantity sold
 discount	Discount percentage
 profit	Profit from sale
